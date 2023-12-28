@@ -15,18 +15,18 @@ class Mycomponent extends React.Component {
     */
 
     handleOnchangeName = (event) => {
+        //state automatically re-enters the old value unchanged
         this.setState({
             name: event.target.value
         })
     }
 
     handleClickButton = () => {
-        console.log('hit the button')
         alert('click me')
     }
 
     render() {
-
+        console.log('>>>> call render: ', this.state)
         return (
             <>
                 <div className='first'>
