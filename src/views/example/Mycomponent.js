@@ -3,9 +3,8 @@ import React from 'react';
 class Mycomponent extends React.Component {
 
     state = {
-        name: 'nhan',
-        tt: 'ngu lon'
-
+        fname: '',
+        lname: ''
     }
 
     /* 
@@ -13,34 +12,45 @@ class Mycomponent extends React.Component {
     <> </> = react.fragment
    
     */
-
-    handleOnchangeName = (event) => {
-        //state automatically re-enters the old value unchanged
+    handleChangefName = (event) => {
         this.setState({
-            name: event.target.value
+            fname: event.target.value
+        })
+    }
+    handleChangeLname = (event) => {
+        this.setState({
+            lname: event.target.value
         })
     }
 
-    handleClickButton = () => {
-        alert('click me')
+    handleSubmit = (event) => {
+        event.preventDefault()
+        console.log('>>>> check data input:', this.state)
     }
 
     render() {
         console.log('>>>> call render: ', this.state)
         return (
             <>
-                <div className='first'>
-                    <input value={this.state.name} type='text'
-                        onChange={(event) => this.handleOnchangeName(event)}
+                <form >
+                    <label htmlFor="fname">First name:</label><br />
+                    <input
+                        type="text"
+                        value={this.state.fname}
+                        onChange={(event) => this.handleChangefName(event)}
                     />
-                    Hello my Component, my name is {this.state.name}
-                </div>
-                <div className='second'>
-                    nguoi dau ma {this.state.tt}
-                </div >
-                <div className='third' >
-                    <button onClick={() => this.handleClickButton()}> Clickme </button>
-                </div>
+                    <br />
+                    <label htmlFor="lname">Last name:</label><br />
+                    <input
+                        type="text"
+                        value={this.state.lname}
+                        onChange={(event) => this.handleChangeLname(event)}
+                    /><br /><br />
+                    <input type="submit"
+                        onClick={(event) => this.handleSubmit(event)}
+                    />
+
+                </form>
             </>
         )
 
