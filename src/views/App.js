@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
-import Mycomponent from './example/Mycomponent';
+
+import MyComponent from './example/MyComponent';  
+
 
 
 function App() {
@@ -9,11 +11,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          ngu lon
+          ehe
         </p>
 
 
-        <Mycomponent />
+        <MyComponent />
       </header>
     </div>
   );

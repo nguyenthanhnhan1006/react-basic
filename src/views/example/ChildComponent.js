@@ -6,7 +6,7 @@ class ChildComponent extends React.Component {
         showJobs: false
     }
 
-    handleShowhide = (status) => {
+    handleShowHide = (status) => {
         this.setState({
             showJobs: !this.state.showJobs
         })
@@ -14,7 +14,7 @@ class ChildComponent extends React.Component {
 
     render() {
 
-        let { arrjobs } = this.props;
+        let { arrJobs } = this.props;
         let { showJobs } = this.state;
         let check = showJobs === true ? 'showJobs = true' : 'showJobs = false';
         console.log('>>> check conditional:', check)
@@ -23,14 +23,14 @@ class ChildComponent extends React.Component {
             <>
                 {showJobs === false ?
                     <div>
-                        <button onClick={() => this.handleShowhide()}> Show </button>
+                        <button onClick={() => this.handleShowHide()}> Show </button>
                     </div>
 
                     :
                     <>
                         <div className="job-lists">
                             {
-                                arrjobs.map((item, index) => {
+                                arrJobs.map((item, index) => {
                                     return (
                                         <div key={item.id}>
                                             {item.title} - {item.salary}
@@ -41,7 +41,7 @@ class ChildComponent extends React.Component {
 
                         </div>
                         <div>
-                            <button onClick={() => this.handleShowhide()}> Hide </button>
+                            <button onClick={() => this.handleShowHide()}> Hide </button>
                         </div>
 
                     </>
