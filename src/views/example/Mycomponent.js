@@ -29,6 +29,20 @@ class MyComponent extends React.Component {
             this.setState({ arrJobs: currentJobs })
     }
 
+    componentDidUpdate (prevProps, prevState) {  
+        console.log('>>>> component updated: ', prevState, this.state)
+        // check if state has changed and perform necessary actions. For example, fetch new data from API or update UI.
+        // if (prevState.arrJobs!== this.state.arrJobs) {
+        //     // fetch new data from API
+        // }
+        // if (prevState.fname!== this.state.fname || prevState.lname!== this.state.lname) {
+        //     // update UI with new data
+        // }
+    }
+    componentDidMount() {
+        console.log('>>>> component mounted')
+        // fetch data from API and update state
+    }
 
     /* 
     JSX => return block 
