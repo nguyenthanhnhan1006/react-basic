@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
 
-import MyComponent from './example/MyComponent';  
-
+// import MyComponent from './example/MyComponent';  
+import ListTodo from './Todos/ListTodo';
 
 
 function App() {
@@ -11,11 +11,19 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          ehe
+          Simple TODO app 
         </p>
 
+        {/* <MyComponent /> */}
 
-        <MyComponent />
+        <ListTodo />
+
+        
+
+      
+        
+        
+        
       </header>
     </div>
   );
